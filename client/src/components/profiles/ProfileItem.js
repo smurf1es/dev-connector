@@ -8,10 +8,9 @@ const ProfileItem = ({
     status,
     company,
     location,
-    skills
-  }
+    skills,
+  },
 }) => {
-  const idUser = `/profile/${_id}`;
   return (
     <div className="profile bg-light">
       <img src={avatar} alt="" className="round-img" />
@@ -21,7 +20,7 @@ const ProfileItem = ({
           {status} {company && <span> at {company}</span>}
         </p>
         <p className="my-1">{location && <span>{location}</span>}</p>
-        <Link to={idUser} className="btn btn-primary">
+        <Link to={`/profile/${_id}`} className="btn btn-primary">
           View Profile
         </Link>
       </div>
@@ -37,6 +36,6 @@ const ProfileItem = ({
 };
 
 ProfileItem.propTypes = {
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired,
 };
 export default ProfileItem;
